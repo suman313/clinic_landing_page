@@ -16,7 +16,7 @@ export default function HeroSection() {
   return (
     <header className="relative overflow-hidden">
       <div className="absolute inset-x-0 top-0 -z-10 h-[34rem] bg-[radial-gradient(circle_at_top_right,_rgba(125,211,252,0.22),_transparent_32%),linear-gradient(135deg,_rgba(2,132,199,0.08),_transparent_65%)]" />
-      <div className="container-shell pb-14 pt-6 sm:pb-20 sm:pt-8">
+      <div className="container-shell pb-14 pt-6 sm:pb-18 sm:pt-8">
         <nav className="glass-card flex items-center justify-between rounded-full border border-white/70 px-4 py-3 sm:px-6">
           <a href="#" className="flex items-center gap-3">
             <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-sky-600 text-sm font-bold text-white">
@@ -46,7 +46,7 @@ export default function HeroSection() {
           </div>
         </nav>
 
-        <div className="grid items-center gap-10 pt-12 lg:grid-cols-[1.1fr_0.9fr] lg:pt-20">
+        <div className="grid items-center gap-8 pt-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-6 lg:pt-16 xl:gap-8">
           <section className="max-w-2xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/90 px-4 py-2 text-sm font-medium text-sky-800 shadow-sm">
               <ShieldIcon className="h-4 w-4" />
@@ -64,36 +64,50 @@ export default function HeroSection() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#booking"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-sky-600 px-6 py-4 text-base font-semibold text-white shadow-lg shadow-sky-900/20 transition hover:bg-sky-700"
+                className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-sky-600 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-sky-900/20 transition hover:bg-sky-700"
               >
                 <CalendarIcon className="h-5 w-5" />
                 Book Dental Appointment
               </a>
               <a
                 href="tel:+61391234567"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-4 text-base font-semibold text-slate-800 transition hover:border-sky-300 hover:text-sky-800"
+                className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-slate-800 transition hover:border-sky-300 hover:text-sky-800"
               >
                 <PhoneIcon className="h-5 w-5" />
                 Call Now
               </a>
             </div>
 
-            <div className="mt-5 flex flex-wrap gap-3 text-sm text-slate-500">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 shadow-sm">
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              {proofItems.map((item) => (
+                <div
+                  key={item.label}
+                  className="glass-card rounded-3xl border border-white/70 px-4 py-4 text-center"
+                >
+                  <p className="text-2xl font-bold text-slate-900">{item.value}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+                    {item.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-5 grid gap-3 text-sm text-slate-500 sm:grid-cols-2">
+              <span className="inline-flex items-center gap-2 rounded-2xl bg-white/90 px-4 py-3 shadow-sm">
                 <CheckIcon className="h-4 w-4 text-sky-700" />
                 New patients welcome
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 shadow-sm">
+              <span className="inline-flex items-center gap-2 rounded-2xl bg-white/90 px-4 py-3 shadow-sm">
                 <CheckIcon className="h-4 w-4 text-sky-700" />
                 No referral needed
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 shadow-sm">
+              <span className="inline-flex items-center gap-2 rounded-2xl bg-white/90 px-4 py-3 shadow-sm sm:col-span-2">
                 <CheckIcon className="h-4 w-4 text-sky-700" />
                 We explain fees before treatment
               </span>
             </div>
 
-            <ul className="mt-8 grid gap-3 text-sm text-slate-600 sm:grid-cols-3">
+            <ul className="mt-6 grid gap-3 text-sm text-slate-600 sm:grid-cols-3">
               {benefitItems.map((item) => (
                 <li
                   key={item}
@@ -117,33 +131,19 @@ export default function HeroSection() {
                 HICAPS and eligible Medicare CDBS accepted
               </span>
             </div>
-
-            <div className="mt-8 grid gap-3 sm:grid-cols-3">
-              {proofItems.map((item) => (
-                <div
-                  key={item.label}
-                  className="glass-card rounded-3xl border border-white/70 px-4 py-4 text-center"
-                >
-                  <p className="text-2xl font-bold text-slate-900">{item.value}</p>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
-                    {item.label}
-                  </p>
-                </div>
-              ))}
-            </div>
           </section>
 
           <section className="relative">
-            <div className="glass-card relative overflow-hidden rounded-[2rem] border border-white/70 p-5 sm:p-6">
+            <div className="glass-card relative overflow-visible rounded-[2rem] border border-white/70 p-5 sm:p-6">
               <div className="absolute inset-0 bg-[linear-gradient(160deg,_rgba(125,211,252,0.18),_transparent_35%),radial-gradient(circle_at_top_left,_rgba(110,231,183,0.18),_transparent_28%)]" />
               <div className="relative rounded-[1.5rem] bg-sky-50 p-6 sm:p-8">
-                <div className="grid gap-4 lg:grid-cols-[1.18fr_0.82fr]">
+                <div className="grid gap-5">
                   <div className="rounded-[1.5rem] bg-white p-5 shadow-sm">
-                    <div className="relative overflow-hidden rounded-[1.25rem]">
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,_#f8fdff,_#eef8ff)] shadow-[0_18px_40px_rgba(14,116,144,0.12)]">
                       <img
                         src="/images/principal-dentist.jpg"
                         alt="Dr Emma Collins, Principal Dentist at DentalCare Melbourne"
-                        className="h-[20rem] w-full object-cover object-center sm:h-[26rem] lg:h-[32rem]"
+                        className="block h-auto w-full object-contain"
                       />
                       <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-[linear-gradient(180deg,transparent,rgba(15,23,42,0.72))] p-5 sm:p-6">
                         <p className="text-lg font-semibold text-white sm:text-xl">Dr Emma Collins</p>
@@ -155,7 +155,7 @@ export default function HeroSection() {
                     </div>
                   </div>
 
-                  <div className="grid gap-4">
+                  <div className="grid gap-5 lg:grid-cols-2">
                     <div className="rounded-[1.5rem] bg-white p-5 shadow-sm">
                       <div className="flex items-center justify-between">
                         <div>
@@ -183,7 +183,7 @@ export default function HeroSection() {
                       </div>
                     </div>
 
-                    <div className="rounded-[1.5rem] bg-slate-900 p-5 text-white shadow-sm">
+                    <div className="rounded-[1.5rem] border border-slate-700 bg-slate-900 p-5 text-white shadow-[0_18px_34px_rgba(15,23,42,0.22)] lg:col-span-2">
                       <p className="text-sm text-sky-100">Why Melbourne patients choose this clinic</p>
                       <ul className="mt-3 space-y-3 text-sm text-slate-200">
                         <li className="flex items-center gap-3">
