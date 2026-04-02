@@ -1,12 +1,51 @@
 import { ShieldIcon, StarIcon } from "./icons";
 
 const doctors = [
-  { name: "Dr Emma Collins", qualification: "BDS, ADC", specialty: "Cosmetic & General Dentistry", detail: "15+ years experience" },
-  { name: "Dr Michael Tran", qualification: "DDS, Implant Certified", specialty: "Implant Dentistry", detail: "Focused on complex restorative care" },
-  { name: "Dr Sarah Lee", qualification: "BDS, Invisalign Certified", specialty: "Smile & Aligner Care", detail: "Gentle care for anxious patients" },
+  {
+    name: "Dr Emma Collins",
+    qualification: "BDS, ADC",
+    specialty: "Cosmetic & General Dentistry",
+    detail: "15+ years experience",
+    image: "/images/principal-dentist.jpg",
+  },
+  {
+    name: "Dr Michael Tran",
+    qualification: "DDS, Implant Certified",
+    specialty: "Implant Dentistry",
+    detail: "Focused on complex restorative care",
+    image: "/images/dr-michael-tran.jpg",
+  },
+  {
+    name: "Dr Sarah Lee",
+    qualification: "BDS, Invisalign Certified",
+    specialty: "Smile & Aligner Care",
+    detail: "Gentle care for anxious patients",
+    image: "/images/dr-sarah-lee.jpg",
+  },
+  {
+    name: "Ready to meet your dentist?",
+    qualification: "New patients welcome",
+    specialty: "Book a consultation",
+    detail: "Start with a check-up or tell us what is bothering you.",
+    image: null,
+    cta: true,
+  },
 ];
 
-const accreditations = ["AHPRA Registered", "ADA Member", "Implant & Aligner Certified"];
+const accreditations = [
+  {
+    title: "AHPRA Registered",
+    description: "Your dentist is registered to practise safely in Australia.",
+  },
+  {
+    title: "ADA Member",
+    description: "Connected to recognised professional standards in Australian dentistry.",
+  },
+  {
+    title: "Implant & Aligner Certified",
+    description: "Trained in advanced smile and tooth replacement treatments.",
+  },
+];
 const reassuranceItems = [
   "Saturday appointments available",
   "HICAPS claiming at reception",
@@ -17,18 +56,19 @@ export default function TrustSection() {
   return (
     <section className="py-16 sm:py-20">
       <div className="container-shell">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-700">
-              Trust & credibility
-            </p>
-            <h2 className="section-title">The trust signals patients look for before they book</h2>
-            <p className="section-copy">
-              When patients worry about pain, cost, or whether they can trust a clinic, clear proof
-              of experience and results helps them feel safe taking the next step.
-            </p>
-          </div>
-          <div className="glass-card flex items-center gap-4 rounded-3xl border border-white/70 px-5 py-4">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-700">
+            Trust & credibility
+          </p>
+          <h2 className="section-title">The trust signals patients look for before they book</h2>
+          <p className="section-copy">
+            When patients worry about pain, cost, or whether they can trust a clinic, clear proof
+            of experience and results helps them feel safe taking the next step.
+          </p>
+        </div>
+
+        <div className="mt-6">
+          <div className="glass-card flex w-full items-center justify-center gap-4 rounded-3xl border border-white/70 px-5 py-5 text-center sm:justify-start sm:text-left">
             <div className="flex items-center gap-1 text-amber-400">
               {Array.from({ length: 5 }).map((_, index) => (
                 <StarIcon key={index} className="h-5 w-5" />
@@ -41,32 +81,65 @@ export default function TrustSection() {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="grid gap-5 md:grid-cols-3">
-            {doctors.map((doctor, index) => (
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1fr]">
+          <div className="grid items-start gap-5 md:grid-cols-2">
+            {doctors.map((doctor) => (
               <article
                 key={doctor.name}
-                className="glass-card rounded-[1.75rem] border border-white/70 p-5"
+                className={`rounded-[1.75rem] border p-5 ${
+                  doctor.cta
+                    ? "border-sky-100 bg-[linear-gradient(180deg,_#f4fbff,_#eefcf9)] shadow-[0_18px_40px_rgba(2,132,199,0.08)]"
+                    : "glass-card border-white/70"
+                }`}
               >
-                <div className="rounded-[1.4rem] bg-[linear-gradient(180deg,_#e0f2fe,_#f0fdf9)] p-4">
-                  <div className="mx-auto flex h-48 w-full max-w-[11rem] items-end justify-center">
-                    <div className="relative h-full w-full">
-                      <div className="absolute left-1/2 top-4 h-16 w-16 -translate-x-1/2 rounded-full bg-sky-200" />
-                      <div
-                        className={`absolute bottom-0 left-1/2 h-28 w-24 -translate-x-1/2 rounded-t-[2rem] ${
-                          index === 1 ? "bg-emerald-500" : index === 2 ? "bg-sky-700" : "bg-sky-600"
-                        }`}
-                      />
-                      <div className="absolute bottom-10 left-1/2 h-16 w-20 -translate-x-1/2 rounded-t-[1rem] bg-white" />
+                {doctor.cta ? (
+                  <div className="flex h-full min-h-[28rem] flex-col justify-between rounded-[1.4rem] bg-white/60 p-6">
+                    <div>
+                      <p className="inline-flex rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700">
+                        {doctor.specialty}
+                      </p>
+                      <h3 className="mt-4 text-2xl font-semibold text-slate-900">{doctor.name}</h3>
+                      <p className="mt-3 text-sm font-medium text-slate-600">{doctor.qualification}</p>
+                      <p className="mt-3 text-sm leading-7 text-slate-600">{doctor.detail}</p>
                     </div>
+                    <a
+                      href="#booking"
+                      className="mt-6 inline-flex rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-sky-700"
+                    >
+                      Book a Consultation
+                    </a>
                   </div>
-                </div>
-                <div className="mt-5">
-                  <h3 className="text-lg font-semibold text-slate-900">{doctor.name}</h3>
-                  <p className="mt-1 text-sm font-medium text-sky-700">{doctor.specialty}</p>
-                  <p className="mt-2 text-sm text-slate-500">{doctor.qualification}</p>
-                  <p className="mt-1 text-sm text-slate-500">{doctor.detail}</p>
-                </div>
+                ) : (
+                  <>
+                    <div className="aspect-[3/4] overflow-hidden rounded-[1.4rem] bg-[linear-gradient(180deg,_#e0f2fe,_#f0fdf9)]">
+                      {doctor.image ? (
+                        <img
+                          src={doctor.image}
+                          alt={`${doctor.name} portrait`}
+                          className="h-full w-full object-cover object-center"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(180deg,_#dbeafe,_#ecfeff)]">
+                          <div className="flex h-24 w-24 items-center justify-center rounded-full bg-white text-2xl font-bold text-sky-700 shadow-sm">
+                            {doctor.name
+                              .split(" ")
+                              .map((part) => part[0])
+                              .slice(0, 2)
+                              .join("")}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                    <div className="mt-5 flex flex-col">
+                      <h3 className="text-lg font-semibold text-slate-900">{doctor.name}</h3>
+                      <p className="mt-2 inline-flex w-fit rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
+                        {doctor.specialty}
+                      </p>
+                      <p className="mt-3 text-sm text-slate-500">{doctor.qualification}</p>
+                      <p className="mt-2 text-sm text-slate-500">{doctor.detail}</p>
+                    </div>
+                  </>
+                )}
               </article>
             ))}
           </div>
@@ -97,13 +170,18 @@ export default function TrustSection() {
               <div className="mt-5 grid gap-3">
                 {accreditations.map((item) => (
                   <div
-                    key={item}
+                    key={item.title}
                     className="flex items-center gap-3 rounded-2xl border border-sky-100 bg-sky-50 px-4 py-3"
                   >
                     <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-sky-700 shadow-sm">
                       <ShieldIcon className="h-5 w-5" />
                     </span>
-                    <span className="text-sm font-medium text-slate-700">{item}</span>
+                    <span>
+                      <span className="block text-sm font-medium text-slate-700">{item.title}</span>
+                      <span className="mt-1 block text-xs leading-5 text-slate-500">
+                        {item.description}
+                      </span>
+                    </span>
                   </div>
                 ))}
               </div>
@@ -118,30 +196,24 @@ export default function TrustSection() {
                   ))}
                 </ul>
               </div>
-            </div>
-
-            <div className="rounded-[1.75rem] bg-slate-900 p-6 text-white shadow-xl shadow-slate-900/10">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-200">
-                Patient confidence
-              </p>
-              <h3 className="mt-3 text-2xl font-bold">Real results make the decision feel safer</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-300">
-                Patients are far more likely to book when they can see calm, happy outcomes and feel
-                reassured that they will be treated with care, clarity, and respect.
-              </p>
-              <div className="mt-5 grid grid-cols-3 gap-3">
-                {["😀", "😁", "😄"].map((face) => (
-                  <div
-                    key={face}
-                    className="flex h-16 items-center justify-center rounded-2xl bg-white/10 text-3xl"
-                  >
-                    {face}
-                  </div>
-                ))}
-              </div>
+              <blockquote className="mt-5 rounded-[1.5rem] border border-sky-100 bg-sky-50 p-5">
+                <p className="text-sm leading-7 text-slate-700">
+                  “I put off treatment for months because I was worried it would hurt, but the team
+                  made everything feel calm, clear, and manageable from the start.”
+                </p>
+                <footer className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-sky-700">
+                  Priya, South Yarra
+                </footer>
+              </blockquote>
+              <a
+                href="#testimonials"
+                className="mt-5 inline-flex text-sm font-semibold text-sky-700 transition hover:text-sky-900"
+              >
+                Read more reviews
+              </a>
               <a
                 href="#booking"
-                className="mt-6 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-sky-50"
+                className="mt-6 inline-flex rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-sky-700"
               >
                 Book with Confidence
               </a>
