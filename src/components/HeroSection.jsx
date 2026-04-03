@@ -39,18 +39,21 @@ export default function HeroSection() {
             </a>
             <a
               href="#booking"
-              className="rounded-full bg-sky-600 px-5 py-2.5 text-white shadow-lg shadow-sky-900/20 transition hover:bg-sky-700"
+              className="inline-flex items-center gap-2 rounded-full bg-[linear-gradient(135deg,_#0284c7,_#0f172a)] px-6 py-3 text-sm font-semibold !text-white shadow-[0_18px_40px_rgba(2,132,199,0.32)] ring-1 ring-sky-200/70 transition hover:-translate-y-0.5 hover:bg-[linear-gradient(135deg,_#0369a1,_#0f172a)] hover:!text-white"
             >
-              Book Dental Appointment
+              <CalendarIcon className="h-4 w-4" />
+              Book Appointment
             </a>
           </div>
         </nav>
 
         <div className="grid items-center gap-8 pt-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-6 lg:pt-16 xl:gap-8">
           <section className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/90 px-4 py-2 text-sm font-medium text-sky-800 shadow-sm">
-              <ShieldIcon className="h-4 w-4" />
-              Same-day appointments available for urgent dental problems
+            <div className="inline-flex items-center gap-3 rounded-full border border-sky-200/80 bg-[linear-gradient(135deg,_rgba(255,255,255,0.96),_rgba(224,242,254,0.92))] px-5 py-2.5 text-sm font-semibold text-sky-900 shadow-[0_14px_32px_rgba(2,132,199,0.14)] ring-1 ring-white/80">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-sky-100 text-sky-700">
+                <ShieldIcon className="h-4 w-4" />
+              </span>
+              <span>Same-day emergency appointments available</span>
             </div>
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
               Stop Dental Pain and Smile with Confidence Again

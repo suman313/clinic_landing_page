@@ -77,6 +77,61 @@ export function ToothIcon(props) {
   );
 }
 
+export function SparkleToothIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+      <path d="M8.8 3.8c-2.3 0-4.5 1.5-4.5 4.8 0 3.1 1.4 5.1 2.4 7.2.5 1.3.9 4 2.1 4 1.1 0 1.5-1.7 1.8-3.1.3-1.2.6-2.3 1.5-2.3s1.2 1.1 1.5 2.3c.3 1.4.7 3.1 1.8 3.1 1.2 0 1.6-2.7 2.1-4 1-2.1 2.4-4.1 2.4-7.2 0-3.3-2.2-4.8-4.5-4.8-1.7 0-2.4.7-3.3.7s-1.6-.7-3.3-.7Z" />
+      <path d="M18 4.5v3M16.5 6h3" />
+      <path d="M19.7 8.4v1.8M18.8 9.3h1.8" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+export function ImplantIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+      <path d="M11 3.5h2" />
+      <path d="M10 6.5h4" />
+      <path d="M9 9.5h6" />
+      <path d="M10.5 12.5h3" />
+      <path d="M12 3.5v9" />
+      <path d="M8.8 14.8c-2 0-3.8 1.3-3.8 4 0 2.1 1 3.4 1.8 3.4.9 0 1.2-1.1 1.4-2 .2-.8.4-1.5 1.1-1.5s.9.7 1.1 1.5c.2.9.5 2 1.4 2s1.2-1.1 1.4-2c.2-.8.4-1.5 1.1-1.5s.9.7 1.1 1.5c.2.9.5 2 1.4 2 .8 0 1.8-1.3 1.8-3.4 0-2.7-1.8-4-3.8-4-.9 0-1.3.4-1.9.4s-1-.4-1.9-.4-1.3.4-1.9.4-1-.4-1.9-.4Z" />
+    </svg>
+  );
+}
+
+export function RootCanalIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+      <path d="M9.5 3.5c-2.6 0-5 1.7-5 5.2 0 3.4 1.6 5.6 2.6 7.9.6 1.4 1 4.4 2.3 4.4 1.2 0 1.7-1.9 2-3.4.3-1.3.7-2.6 1.6-2.6s1.3 1.3 1.6 2.6c.3 1.5.8 3.4 2 3.4 1.3 0 1.7-3 2.3-4.4 1-2.3 2.6-4.5 2.6-7.9 0-3.5-2.4-5.2-5-5.2-1.8 0-2.6.8-3.5.8s-1.7-.8-3.5-.8Z" />
+      <path d="M12 8v6" />
+      <path d="M10.7 11.2 12 13l1.3-1.8" />
+    </svg>
+  );
+}
+
+export function BracesIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+      <path d="M5 9c0-2.2 1.8-4 4-4h6c2.2 0 4 1.8 4 4v2c0 4.7-3.6 8-7 8s-7-3.3-7-8V9Z" />
+      <path d="M7 11h10" />
+      <path d="M8.5 10v2M11 10v2M13 10v2M15.5 10v2" />
+      <path d="M9 15.5h6" />
+    </svg>
+  );
+}
+
+export function EmergencyToothIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+      <path d="M8.5 3.8c-2.4 0-4.6 1.5-4.6 4.9 0 3.2 1.5 5.3 2.5 7.4.6 1.3 1 4.1 2.2 4.1 1.1 0 1.5-1.7 1.8-3.1.3-1.2.6-2.4 1.5-2.4s1.2 1.2 1.5 2.4c.3 1.4.7 3.1 1.8 3.1 1.2 0 1.6-2.8 2.2-4.1 1-2.1 2.5-4.2 2.5-7.4 0-3.4-2.2-4.9-4.6-4.9-1.7 0-2.4.7-3.2.7s-1.5-.7-3.2-.7Z" />
+      <path d="M18.5 5.5 21 10h-5l2.5-4.5Z" />
+      <path d="M18.5 7v1.2" />
+      <path d="M18.5 9.3h.01" />
+    </svg>
+  );
+}
+
 export function TherapyIcon(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
