@@ -197,6 +197,53 @@ export const servicePages = {
       },
     ],
   },
+  cbd: {
+    slug: "dentist-melbourne-cbd",
+    title: "Dentist Melbourne CBD | Convenient City Dental Appointments",
+    metaTitle: "Dentist Melbourne CBD | Convenient City Dental Appointments",
+    metaDescription:
+      "Looking for a dentist in Melbourne CBD? Book convenient city dental appointments for check-ups, whitening, implants, and emergency dental care near Collins Street.",
+    eyebrow: "Dentist Melbourne CBD",
+    heading: "Convenient dental care in Melbourne CBD for busy city patients",
+    intro:
+      "If you work in the city or want a centrally located clinic, DentalCare Melbourne makes it easier to book a check-up, emergency appointment, whitening consult, or implant discussion without unnecessary hassle.",
+    proof: "Convenient Collins Street location",
+    icon: ToothIcon,
+    accentClass: "bg-sky-100 text-sky-700",
+    primaryCta: "Book CBD Appointment",
+    primaryHref: "/#booking",
+    secondaryCta: "Call the Clinic",
+    secondaryHref: "tel:+61391234567",
+    priceLabel: "City appointments",
+    priceValue: "Mon to Sat",
+    bullets: [
+      "Easy option for Melbourne CBD workers and nearby residents",
+      "General, cosmetic, implant, and emergency dental care",
+      "Clear treatment planning and fees before major work",
+    ],
+    sections: [
+      {
+        title: "Why city patients choose this clinic",
+        body:
+          "Patients in Melbourne CBD often want convenience, speed, and clarity. A central clinic location makes it easier to fit dental care around work, commuting, and everyday life without creating extra friction.",
+      },
+      {
+        title: "What you can book here",
+        body:
+          "Patients can book for check-ups and cleans, teeth whitening, implant consultations, emergency dental problems, and general concerns. If you are unsure what you need, start with an assessment and we will guide you from there.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Do you offer dental appointments in Melbourne CBD?",
+        a: "Yes. The clinic is located on Collins Street in Melbourne CBD, making it convenient for city workers and nearby residents.",
+      },
+      {
+        q: "Can I book both routine and urgent dental appointments here?",
+        a: "Yes. Patients can book for general care, cosmetic treatments, and urgent dental problems, including same-day emergency appointments when available.",
+      },
+    ],
+  },
 };
 
 export const homepageServiceLinks = {
@@ -207,6 +254,7 @@ export const homepageServiceLinks = {
 };
 
 export const sharedPageLinks = [
+  { label: "Dentist Melbourne CBD", href: "/dentist-melbourne-cbd/" },
   { label: "Emergency Dentist", href: "/emergency-dentist-melbourne/" },
   { label: "Teeth Whitening", href: "/teeth-whitening-melbourne/" },
   { label: "Dental Implants", href: "/dental-implants-melbourne/" },
@@ -217,4 +265,31 @@ export const sharedTrustPoints = [
   { icon: CheckIcon, text: "Same-day appointments when available" },
   { icon: CalendarIcon, text: "Clear fees before major treatment" },
   { icon: PhoneIcon, text: "Call or book online in under a minute" },
+];
+
+export const resourceCards = [
+  {
+    category: "Emergency Care",
+    title: "When tooth pain becomes urgent and what to do next",
+    excerpt:
+      "A practical guide for patients who are not sure whether a broken tooth, swelling, or severe toothache needs same-day care.",
+    href: "/emergency-dentist-melbourne/",
+    readTime: "4 min read",
+  },
+  {
+    category: "Cosmetic Dentistry",
+    title: "What professional teeth whitening can realistically improve",
+    excerpt:
+      "A simple, patient-friendly explanation of how whitening works, who it suits, and what kind of result feels natural.",
+    href: "/teeth-whitening-melbourne/",
+    readTime: "3 min read",
+  },
+  {
+    category: "Location Guide",
+    title: "How to choose a dentist in Melbourne CBD without second-guessing",
+    excerpt:
+      "What city patients usually care about most: convenience, cost clarity, trust signals, and whether booking feels easy.",
+    href: "/dentist-melbourne-cbd/",
+    readTime: "5 min read",
+  },
 ];

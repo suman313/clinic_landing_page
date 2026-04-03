@@ -2,6 +2,7 @@ import { sharedPageLinks, sharedTrustPoints } from "../servicePages";
 
 export default function ServicePage({ page }) {
   const Icon = page.icon;
+  const relatedPages = sharedPageLinks.filter((link) => link.href !== `/${page.slug}/`);
   const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
@@ -164,6 +165,30 @@ export default function ServicePage({ page }) {
                   <p className="mt-4 max-w-4xl pr-10 text-sm leading-7 text-slate-600">{faq.a}</p>
                 </details>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-16 sm:pb-20">
+          <div className="container-shell">
+            <div className="glass-card rounded-[1.75rem] border border-white/70 p-6 shadow-sm">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">
+                Explore More Treatments
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold text-slate-900">
+                Compare other popular dental services
+              </h2>
+              <div className="mt-5 flex flex-wrap gap-3">
+                {relatedPages.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="inline-flex rounded-full border border-sky-100 bg-sky-50 px-4 py-2.5 text-sm font-medium text-sky-700 transition hover:border-sky-200 hover:bg-sky-100 hover:text-sky-900"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </section>

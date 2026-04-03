@@ -2,10 +2,12 @@ import { useEffect } from "react";
 import ContactSection from "./components/ContactSection";
 import BookingSection from "./components/BookingSection";
 import BeforeAfterSection from "./components/BeforeAfterSection";
+import DemoChatbot from "./components/DemoChatbot";
 import EmergencyBanner from "./components/EmergencyBanner";
 import FaqSection, { faqSchema } from "./components/FaqSection";
 import HeroSection from "./components/HeroSection";
 import PricingSection from "./components/PricingSection";
+import ResourcesSection from "./components/ResourcesSection";
 import ServicesSection from "./components/ServicesSection";
 import StickyMobileCTA from "./components/StickyMobileCTA";
 import TestimonialsSection from "./components/TestimonialsSection";
@@ -80,10 +82,12 @@ export default function App() {
         <BeforeAfterSection />
         <BookingSection />
         <PricingSection />
+        <ResourcesSection />
         <FaqSection />
         <TestimonialsSection />
         <ContactSection />
       </main>
+      <DemoChatbot />
       <WhatsAppButton />
       <StickyMobileCTA />
     </div>

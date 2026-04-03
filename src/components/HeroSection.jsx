@@ -1,4 +1,5 @@
 import { CalendarIcon, CheckIcon, LocationIcon, PhoneIcon, ShieldIcon } from "./icons";
+import { sharedPageLinks } from "../servicePages";
 
 const benefitItems = [
   "Gentle care for nervous patients",
@@ -79,6 +80,23 @@ export default function HeroSection() {
                 <PhoneIcon className="h-5 w-5" />
                 Call Now
               </a>
+            </div>
+
+            <div className="mt-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                Popular treatment pages
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {sharedPageLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="inline-flex items-center rounded-full border border-sky-100 bg-white/90 px-4 py-2 text-sm font-medium text-sky-800 shadow-sm transition hover:border-sky-200 hover:bg-sky-50 hover:text-sky-900"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
             </div>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
