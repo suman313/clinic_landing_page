@@ -6,6 +6,7 @@ import {
   SparkleToothIcon,
   ToothIcon,
 } from "./icons";
+import { homepageServiceLinks } from "../servicePages";
 
 const services = [
   {
@@ -99,10 +100,12 @@ export default function ServicesSection() {
                 </p>
                 <p className="mt-3 flex-1 text-sm leading-7 text-slate-600">{service.description}</p>
                 <a
-                  href="#booking"
+                  href={homepageServiceLinks[service.title] ?? "/#booking"}
                   className={`mt-6 inline-flex min-h-11 items-center justify-center rounded-full px-5 py-3 text-sm font-semibold !text-white transition focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-slate-200/70 ${service.buttonClass}`}
                 >
-                  <span className="text-inherit">Book Now</span>
+                  <span className="text-inherit">
+                    {homepageServiceLinks[service.title] ? "Learn More" : "Book Now"}
+                  </span>
                 </a>
               </article>
             );
